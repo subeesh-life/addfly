@@ -56,7 +56,7 @@ $(function () {
                 complete: function () {
                     setTimeout(function () {
                         submitBtn.removeChild(spinnerIcon);
-                        submitBtn.textContent = 'Send Message';
+                        submitBtn.textContent = '<span class="txt">send message</span>';
                         $this.prop("disabled", false);
                         $input.prop("disabled", false);
                         $text.prop("disabled", false);
