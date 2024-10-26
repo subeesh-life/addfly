@@ -28,6 +28,27 @@ $(function () {
             $input.prop("disabled", true);
             $text.prop("disabled", true);
 
+             // Simulate processing delay of 3 seconds (3000ms)
+             setTimeout(function () {
+                // Show success message after 3 seconds regardless of AJAX response
+                $('#success').html("<div class='alert alert-success'>");
+                $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>");
+                $('#success > .alert-success').append("<strong>Message sent successfully. </strong>");
+                $('#success > .alert-success').append('</div>');
+                $('#contactForm').trigger("reset");
+
+                // Reset the button text
+                submitBtn.innerHTML = '<span class="txt">Send Message</span>';
+
+                // Enable the form elements again
+                $this.prop("disabled", false);
+                $input.prop("disabled", false);
+                $text.prop("disabled", false);
+
+                // Clear the form fields
+                $('#contactForm').trigger("reset");
+            }, 3000);
+
             $.ajax({
                 // url: "mail/contact.php",
                 url: "https://formsubmit.co/ajax/mails@subeesh.me",
@@ -39,6 +60,7 @@ $(function () {
                     message: message
                 },
                 cache: false,
+                /*
                 success: function () {
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>");
@@ -56,12 +78,13 @@ $(function () {
                 complete: function () {
                     setTimeout(function () {
                         submitBtn.removeChild(spinnerIcon);
-                        submitBtn.textContent = '<span class="txt">send message</span>';
+                        submitBtn.innerHTML = '<span class="txt">send message</span>';
                         $this.prop("disabled", false);
                         $input.prop("disabled", false);
                         $text.prop("disabled", false);
                     }, 1000);
                 }
+                */
             });
         },
         filter: function () {

@@ -6475,6 +6475,7 @@ img{
 	color: #155724;
 	background-color: #d4edda;
 	border-color: #c3e6cb;
+	border-radius: 30px;
   }
   
   .alert-success hr {
@@ -6489,6 +6490,7 @@ img{
 	color: #0c5460;
 	background-color: #d1ecf1;
 	border-color: #bee5eb;
+	border-radius: 30px;
   }
   
   .alert-info hr {
@@ -6564,6 +6566,7 @@ img{
 
 .text-danger {
 	color: #dc3545 !important;
+	border-radius: 30px;
   }
   
   a.text-danger:hover, a.text-danger:focus {
