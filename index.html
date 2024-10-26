@@ -753,27 +753,35 @@
 						
 						<!-- Default Form -->
 						<div class="default-form">
-							<form action="https://formsubmit.co/9dc85de232048689c9fc56ec35305748" method="POST">
+							<!-- <form name="sentMessage" id="contactForm" novalidate="novalidate" action="https://formsubmit.co/9dc85de232048689c9fc56ec35305748" method="POST"> -->
+							<form name="sentMessage" id="contactForm" action="https://formsubmit.co/mails@subeesh.me" method="post" >
 									
 								<div class="form-group">
-									<input type="text" name="username" placeholder="Your name" required>
+									<input type="text" id="name" placeholder="Your name" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
 								</div>
 								
 								<div class="form-group">
-									<input type="email" name="email" placeholder="Email address" required>
+									<input type="email" id="email" placeholder="Email address"  required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
 								</div>
 								
 								<div class="form-group">
-									<textarea name="message" placeholder="message"></textarea>
+									<textarea placeholder="message" id="message" required="required"
+                                    data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
 								</div>
-							
+								<input type="hidden" name="_captcha" value="false">
 								<div class="form-group">
-									<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">send message</span></button>
+									<button class="theme-btn btn-style-one" type="submit" id="sendMessageButton">
+										<span class="txt">send message</span>
+									</button>
 								</div>
 								
 							</form>
 						</div>
 					</div>
+					<div id="success"></div>
 				</div>
 				
 			</div>
@@ -938,6 +946,11 @@
 <script src="assets/js/jquery-ui.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/color-settings.js"></script>
+
+<!-- Contact Javascript File -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
 
 </body>
 </html>

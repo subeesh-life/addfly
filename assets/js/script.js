@@ -131,6 +131,7 @@
 		var hiddenBar = $('.hidden-bar');
 		var hiddenBarOpener = $('.hidden-bar-opener');
 		var hiddenBarCloser = $('.hidden-bar-closer');
+		var hiddenBarCloser1 = $('.color-layer');
 		$('.hidden-bar-wrapper').mCustomScrollbar();
 		
 		//Show Sidebar
@@ -140,6 +141,10 @@
 		
 		//Hide Sidebar
 		hiddenBarCloser.on('click', function () {
+			hiddenBar.removeClass('visible-sidebar');
+		});
+		//Hide Sidebar
+		hiddenBarCloser1.on('click', function () {
 			hiddenBar.removeClass('visible-sidebar');
 		});
 		
